@@ -77,149 +77,80 @@
                                 <div class="row m-3">
                                     <h1>Add Staff</h1>
                                 </div>
+                                <form action="http://localhost:3000/addstaff" method="POST">
+                                    <div class="row m-3">
+                                        <div class="col-md-3 ">
+                                            <label for="exampleFormControlSelect1">ฺBADGE NO :</label>
+                                        </div>
+                                        <div class="col-md-3 ">
+                                            <input type="text" class="form-control" id="badgeNo" name="badgeNo"
+                                                placeholder="Badge No.">
+                                        </div>
+                                    </div>
 
-                                <div class="row m-3">
-                                    <div class="col-md-3 ">
-                                        <label for="exampleFormControlSelect1">EMPLOYEE ID :</label>
+                                    <div class="row m-3">
+                                        <div class="col-md-3">
+                                            <label for="exampleFormControlSelect1">EMPLOYEE NAME :</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="emp_name" name="emp_name"
+                                                placeholder="Name">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="exampleFormControlSelect1">EMPLOYEE SURNAME :</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="emp_surname" name="emp_surname"
+                                                placeholder="Surname">
+                                        </div>
                                     </div>
-                                    <div class="col-md-3 ">
-                                        <input type="text" class="form-control" placeholder="Emp. ID">
-                                    </div>
-                                </div>
 
-                                <div class="row m-3">
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">EMPLOYEE NAME :</label>
+                                    <div class="row m-3">
+                                        <div class="col-md-3">
+                                            <label for="exampleFormControlSelect1">POSITION :</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <select class="form-control" id="emp_position" name="emp_position">
+                                                <option selected>Choose</option>
+                                                <option>Excutive</option>
+                                                <option>Excutive II</option>
+                                                <option>Officer</option>
+                                                <option>Supervisor</option>
+                                                <option>Admin/Secretary</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="exampleFormControlSelect1">DEPT :</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <select class="form-control" id="emp_dept" name="emp_dept">
+                                                <option selected>Choose</option>
+                                                <option>Admin</option>
+                                                <option>HR</option>
+                                                <option>Finance</option>
+                                                <option>IT</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <input type="text" class="form-control" placeholder="Name">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">EMPLOYEE SURNAME :</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="text" class="form-control" placeholder="Surname">
-                                    </div>
-                                </div>
 
-                                <div class="row m-3">
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">POSITION :</label>
+                                    <div class="row m-3">
+                                        <div class="col-md-3">
+                                            <label for="exampleFormControlSelect1">STATUS :</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <select class="form-control" id="emp_status" name="emp_status">
+                                                <option selected>Choose</option>
+                                                <option>online</option>
+                                                <option>AL</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option selected>Choose </option>
-                                            <option>lhohei</option>
-                                            <option>ihrgurh</option>
-                                            <option>urhgurh</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">DEPT :</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option selected>Choose</option>
-                                            <option>aaaa</option>
-                                            <option>bbbb</option>
-                                            <option>cccc</option>
-                                        </select>
-                                    </div>
-                                </div>
 
+                                    <div class="row m-3  d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
 
-                                <div class="row m-3">
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">DAY :</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option selected>Choose</option>
-                                            <option>Mon</option>
-                                            <option>Tue</option>
-                                            <option>Wed</option>
-                                            <option>Thu</option>
-                                            <option>Fri</option>
-                                            <option>Sat</option>
-                                            <option>Sun</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row m-3">
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">MONTH :</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option selected>Choose</option>
-                                            <option>Jan</option>
-                                            <option>Feb</option>
-                                            <option>Mar</option>
-                                            <option>Apr</option>
-                                            <option>May</option>
-                                            <option>Jun</option>
-                                            <option>Jul</option>
-                                            <option>Aug</option>
-                                            <option>Sep</option>
-                                            <option>Oct</option>
-                                            <option>Nov</option>
-                                            <option>Dec</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">until</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option selected>Choose</option>
-                                            <option>Jan</option>
-                                            <option>Feb</option>
-                                            <option>Mar</option>
-                                            <option>Apr</option>
-                                            <option>May</option>
-                                            <option>Jun</option>
-                                            <option>Jul</option>
-                                            <option>Aug</option>
-                                            <option>Sep</option>
-                                            <option>Oct</option>
-                                            <option>Nov</option>
-                                            <option>Dec</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row m-3">
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">LINE AMOUT:</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option selected>Choose</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row m-3">
-                                    <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">STATUS :</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option selected>Choose</option>
-                                            <option>online</option>
-                                            <option>AL</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row m-3  d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary">Save</button>
-                                </div>
                             </div>
                         </div>
 
@@ -254,6 +185,82 @@
                                     </div>
                                 </div>
 
+                                <div class="row m-3">
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">DAY :</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id="emp_day" name="emp_day">
+                                            <option selected>Choose</option>
+                                            <option>Mon</option>
+                                            <option>Tue</option>
+                                            <option>Wed</option>
+                                            <option>Thu</option>
+                                            <option>Fri</option>
+                                            <option>Sat</option>
+                                            <option>Sun</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row m-3">
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">MONTH :</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id="emp_startmonth" name="emp_startmonth">
+                                            <option selected>Choose</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">until</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id="emp_lastmonth" name="emp_lastmonth">
+                                            <option selected>Choose</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row m-3">
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">LINE AMOUT:</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id="emp_line" name="emp_line">
+                                            <option selected>Choose</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="row m-3  d-flex justify-content-center">
                                     <button type="button" class="btn btn-primary">Save</button>
                                 </div>
@@ -262,8 +269,7 @@
                         </div>
 
                         <!--------------------------------------------Admin------------------------------------------------------->
-                       
-                       
+                        <!--    
                         <div class="tab-pane fade" id="v-pills-profile1" role="tabpanel" aria-labelledby="v-pills-profile1-tab">
                             <div class="container">
 
@@ -291,8 +297,8 @@
                                         </div>
                                 </form>
                             </div>
-                        </div>
-                        
+                        </div> -->
+
                     </div>
                 </div>
             </div>
