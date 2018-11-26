@@ -1,6 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const hbs = require('hbs')
+
 
 var Schema = mongoose.Schema
 
@@ -44,7 +46,6 @@ var AdminSchema = new Schema({
     password:{
         type:String,
         required:true,
-        unique:true,
         minlength:8
     }
 })
@@ -53,6 +54,7 @@ var AdminSchema = new Schema({
 var Staff = mongoose.model('Staff', StaffSchema)
 var Admin = mongoose.model('Admin', AdminSchema)
 
+//----------------------------------- Connect ---------------------------------
 mongoose.connect('mongodb://localhost:27017/dbase').then((doc) => {
     console.log('@@@@ Success to connect with Database @@@')
 }, (err) => {
@@ -60,14 +62,21 @@ mongoose.connect('mongodb://localhost:27017/dbase').then((doc) => {
 })
 
 
+
+
+
+//-------------------------------------------------------------------------------------------//
 var app = express()
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
+
 
 //-------------------------------------------------------------------------------------------//
 app.get('/',(req,res)=>{
     res.send('hello')
 })
-
 
 
 //----------------------------------- Sign Up-----------------------------------------------//
@@ -85,30 +94,29 @@ app.post('/signup',(req,res)=>{
 })
 
 
-
 //------------------------------------- Sign in --------------------------------------------//
-app.get('/signin',(req,res)=>{
-    let usernameInput = req.headers['username']
-    let passwordInput = req.headers['password']
+app.post('/signin',(req,res)=>{
+    let usernameInput=req.body.username1
+    let passwordInput=req.body.password1
+
+    // console.log(usernameInput);
+    //  console.log(passwordInput);
 
     Admin.find({
         username:usernameInput,
-        password:passwordInput
+        password:passwordInput 
     }).then((admin)=>{
-        if(admin.length==1){
-            res.send(admin[0])
+        if(admin.length == 1){
+            //;res.send(admin[0]);
+            res.render('admin_schedule.hbs');
         }else if(admin.length == 0){
-            res.status(400).send('Login Error')
+            res.status(400).send('cannot login')
         }
     },(err)=>{
         res.status(400).send(err)
     })
 
 })
-
-
-
-
 
 // ------------------------------ Port -------------------------------------------------------
 app.listen(3000,()=>{
