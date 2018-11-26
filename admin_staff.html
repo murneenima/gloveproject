@@ -15,11 +15,11 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
 
     <title>Staff</title>
     <style>
-    body {
+        body {
         background-color:honeydew;
         font-family: 'IBM Plex Sans', sans-serif;
         }
@@ -63,7 +63,8 @@
                             aria-controls="v-pills-home" aria-selected="true">Add Staff</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
                             aria-controls="v-pills-profile" aria-selected="false">Edit Staff</a>
-
+                        <a class="nav-link" id="v-pills-profile1-tab" data-toggle="pill" href="#v-pills-profile1" role="tab"
+                            aria-controls="v-pills-profile1" aria-selected="false">Admin</a>
 
                     </div>
                 </div>
@@ -79,7 +80,7 @@
 
                                 <div class="row m-3">
                                     <div class="col-md-3 ">
-                                        <label for="exampleFormControlSelect1" >EMPLOYEE ID :</label>
+                                        <label for="exampleFormControlSelect1">EMPLOYEE ID :</label>
                                     </div>
                                     <div class="col-md-3 ">
                                         <input type="text" class="form-control" placeholder="Emp. ID">
@@ -87,19 +88,19 @@
                                 </div>
 
                                 <div class="row m-3">
-                                        <div class="col-md-3">
-                                            <label for="exampleFormControlSelect1">EMPLOYEE NAME :</label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" placeholder="Name">
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label for="exampleFormControlSelect1">EMPLOYEE SURNAME :</label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" placeholder="Surname">
-                                        </div>
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">EMPLOYEE NAME :</label>
                                     </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">EMPLOYEE SURNAME :</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" placeholder="Surname">
+                                    </div>
+                                </div>
 
                                 <div class="row m-3">
                                     <div class="col-md-3">
@@ -114,7 +115,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="exampleFormControlSelect1">DEPT  :</label>
+                                        <label for="exampleFormControlSelect1">DEPT :</label>
                                     </div>
                                     <div class="col-md-3">
                                         <select class="form-control" id="exampleFormControlSelect1">
@@ -242,8 +243,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-3">
-                                            <label for="exampleFormControlSelect1">STATUS :</label>
-                                        </div>
+                                        <label for="exampleFormControlSelect1">STATUS :</label>
+                                    </div>
                                     <div class="col-md-3">
                                         <select class="form-control" id="exampleFormControlSelect1">
                                             <option selected>Choose</option>
@@ -260,7 +261,40 @@
                             </div>
                         </div>
 
+                        <!--------------------------------------------Admin------------------------------------------------------->
+                        <div class="tab-pane fade" id="v-pills-profile1" role="tabpanel" aria-labelledby="v-pills-profile1-tab">
+                            <div class="container">
 
+                                <form action="http://localhost:3000/signup" method="POST">
+                                    <div class="row my-3">
+                                        <div class="col-md-3">
+                                            <label for="exampleFormControlSelect1">Username :</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" placeholder="Username" id="username">
+                                        </div>
+                                    </div>
+
+                                    <div class="row my-3">
+                                            <div class="col-md-3">
+                                                <label for="exampleFormControlSelect1">Password :</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="password" class="form-control" placeholder="Password" id="password">
+                                            </div>
+                                        </div>
+
+                                        <div class="row m-3  d-flex justify-content-center">
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </div>
+
+                                </form>
+
+
+                                
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
