@@ -53,7 +53,7 @@
         </div>
     </nav>
 
-    <!-------------------- Body ------------------------------------------------------------------>
+    <!--============================================ Body =================================================-->
     <div class="setion1">
         <div class="container">
             <div class="row py-5">
@@ -63,15 +63,18 @@
                             aria-controls="v-pills-home" aria-selected="true">Add Staff</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
                             aria-controls="v-pills-profile" aria-selected="false">Edit Staff</a>
+                        <a class="nav-link" id="v-pills-display-tab" data-toggle="pill" href="#v-pills-display" role="tab"
+                            aria-controls="v-pills-display" aria-selected="false">Display Staff</a>
+                        <!--
                         <a class="nav-link" id="v-pills-profile1-tab" data-toggle="pill" href="#v-pills-profile1" role="tab"
-                            aria-controls="v-pills-profile1" aria-selected="false">Admin</a>
+                            aria-controls="v-pills-profile1" aria-selected="false">Admin</a> -->
 
                     </div>
                 </div>
                 <div class="col-md-10" style="background-color: rgb(202, 241, 238); ">
                     <div class="tab-content" id="v-pills-tabContent">
 
-                        <!-- -------------------------------------- Add staff------------------------------------------------->
+                        <!-- ====================================== Add staff =========================================-->
                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                             <div class="container">
                                 <div class="row m-3">
@@ -154,7 +157,7 @@
                             </div>
                         </div>
 
-                        <!-- -------------------------------------- edit staff ------------------------------------------------->
+                        <!--======================================= edit staff =========================================-->
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             <div class="container">
                                 <div class="row m-3">
@@ -166,13 +169,42 @@
                                         <label for="exampleFormControlSelect1">EMPLOYEE ID :</label>
                                     </div>
                                     <div class="col-md-3">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option selected>Choose</option>
-                                            <option>1233435</option>
-                                            <option>5607445</option>
-                                            <option>8973289</option>
+                                        <select class="form-control" id="edit_id" onclick="selectbadge()">
                                         </select>
                                     </div>
+                                </div>
+
+                                <div class="row m-3">
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">NAME :</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input class="form-control" type="text" placeholder="Emp. Name " readonly id="edit_name">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">SURNAME :</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input class="form-control" type="text" placeholder="Emp. Surname" readonly id="edit_surname">
+                                    </div>
+                                </div>
+
+                                <div class="row m-3">
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">POSITION :</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input class="form-control" type="text" placeholder="Position" readonly id="edit_position">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="exampleFormControlSelect1">DEPARTMENT :</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input class="form-control" type="text" placeholder="Dept." readonly id="edit_dept">
+                                    </div>
+                                </div>
+
+                                <div class="row m-3">
                                     <div class="col-md-3">
                                         <label for="exampleFormControlSelect1">STATUS :</label>
                                     </div>
@@ -299,14 +331,71 @@
                             </div>
                         </div> -->
 
+                        <!---------------------------------------------Display ------------------------------------------------>
+                        <div class="tab-pane fade" id="v-pills-display" role="tabpanel" aria-labelledby="v-pills-display-tab">
+                            <div class="container">
+                                <div class="row m-3">
+                                    <h1>Display Staff</h1>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
 
+    <script>
+        var dataType = "{{dataType}}";
+        var staffdata = JSON.parse(decodeURI(dataType));
+        var staff_data = []; // All staff data
+        var staff_badge = []; // colloected badge ID 
+
+        for (let i = 0; i < staffdata.length; i++) {
+            staff_data[i] = staffdata[i];
+            //console.log(staff_data[i]);
+        }
+
+        for (let i = 0; i < staff_data.length; i++) {
+            staff_badge[i] = staff_data[i].badgeNo;
+            //console.log(staff_badge[i]);
+        }
+
+        console.log(staffdata);
+
+        badgeid();
+        selectbadge();
+
+        // display badge id on option selected
+        function badgeid() {
+            var staff_option = []; // collected option
+            for (let i = 0; i < staff_data.length; i++) {
+                //staff_badge[i] = staff_data[i].badgeNo;
+                //console.log(staff_badge[i]);
+                staff_option += "<option>" + staff_badge[i] + "</option>";
+            }
+            document.getElementById("edit_id").innerHTML = staff_option;
+        }
+
+        function selectbadge() {
+            var select_badge = document.getElementById("edit_id").value;
+            var badgeno = [];
+            //console.log(select_badge);
+            for(let i=0;i<staff_badge.length;i++){
+                if (select_badge == staff_badge[i]) {
+                    document.getElementById("edit_name").value = staff_data[i].emp_name;    
+                    document.getElementById("edit_surname").value = staff_data[i].emp_surname;    
+                    document.getElementById("edit_position").value = staff_data[i].emp_position;    
+                    document.getElementById("edit_dept").value = staff_data[i].emp_dept;    
+                } 
+            }
+            
+
+
+        }
+    </script>
 
 </body>
 
