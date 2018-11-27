@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const hbs = require('hbs')
 //mongoose.Promise = global.Promise; 
 
+// Syntax Error พอบันทึกแล้วซ้ำแล้วมันบันทึกไม่ได้ ต้องเปลี่ยน Database ใหม่
+
 var Staff = require('./StaffModel')
 var StaffSchedule = require('./StaffScheduleModel')
 //----------------------------------- Connect ---------------------------------
