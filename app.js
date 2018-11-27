@@ -3,9 +3,57 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const hbs = require('hbs')
 
-var Staff = require('./Schema');
-var Admin = require('./Schema');
-var StaffSchedule = require('./Schema');
+
+var Schema = mongoose.Schema
+
+//-------------------------------Staff Schema --------------------------------------------//
+var StaffSchema = new Schema({
+    badgeNo: {
+        type: String,
+        unique: true,
+        required: true,
+        minlength: 7
+    },
+    emp_name: {
+        type: String,
+        required: true
+    },
+    emp_surname: {
+        type: String,
+        required: true
+    },
+    emp_position: {
+        type: String,
+        required: true
+    },
+    emp_dept: {
+        type: String,
+        required: true
+    }, 
+    emp_status: {
+        type: String,
+        required: true
+    }
+})
+
+//------------------------------- Admin Schema -------------------------------------------//
+var AdminSchema = new Schema({
+    username:{
+      type:String,
+      required:true,
+      unique:true 
+    },
+    password:{
+        type:String,
+        required:true,
+        minlength:8
+    }
+})
+
+
+var Staff = mongoose.model('Staff', StaffSchema)
+var Admin = mongoose.model('Admin', AdminSchema)
+
 
 //----------------------------------- Connect ---------------------------------
 mongoose.connect('mongodb://localhost:27017/dbase').then((doc) => {
@@ -13,6 +61,7 @@ mongoose.connect('mongodb://localhost:27017/dbase').then((doc) => {
 }, (err) => {
     console.log('!!!!!!!!!! error to connect with database !!!!!!!!!')
 })
+
 
 
 //-------------------------------------------------------------------------------------------//
@@ -162,8 +211,7 @@ app.get('/send_staffdata',(req,res)=>{
 }) 
 
 
-//------------------------------------ Edit staff schedule ------------------------------------------//
-
+//------------------------------------ Edit staff ------------------------------------------//
 
 //------------------------------- Port -----------------------------------------------------//
 app.listen(3000,()=>{
