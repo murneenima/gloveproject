@@ -53,7 +53,7 @@ var AdminSchema = new Schema({
 
 var Staff = mongoose.model('Staff', StaffSchema)
 var Admin = mongoose.model('Admin', AdminSchema)
-
+//var Product = required('./ProductModel')
 
 //----------------------------------- Connect ---------------------------------
 mongoose.connect('mongodb://localhost:27017/dbase').then((doc) => {
@@ -210,9 +210,38 @@ app.get('/send_staffdata',(req,res)=>{
     })
 }) 
 
+//-------------------------------------- Add Product ---------------------------------------//
+/*app.post('/addproduct',(req,res)=>{
+    // check size condition
+    
+    if(req.body.product_size == 'Choose'){
+        res.status(400).send('Size does not choose')
+        return
+    }
 
-//------------------------------------ Edit staff ------------------------------------------//
+    let product_size
+    if(req.body.product_size == 'S'){
+        product_size = 'S'
+    }else if(req.body.product_size == 'M'){
+        product_size = 'M'
+    }else if(req.body.product_size == 'X'){
+        product_size = 'X'
+    }else if(req.body.product_size == 'XL'){
+        product_size = 'XL'
+    }
 
+    let newProduct = Product({
+        product_id:req.body.product_id,
+        product_type:req.body.product_type,
+        product_size:product_size,
+        weight_min:req.body.weight_min,
+        weight_max:req.body.weight_max,
+        length_min:req.body.length_min,
+        length_max:req.body.length_max
+    })
+
+    newProduct.save().then
+}) */
 //------------------------------- Port -----------------------------------------------------//
 app.listen(3000,()=>{
     console.log(' ##### listening on port 3000 #####')

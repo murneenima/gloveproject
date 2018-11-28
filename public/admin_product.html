@@ -114,7 +114,7 @@
                                         <label for="exampleFormControlSelect1">PRODUCT ID :</label>
                                     </div>
                                     <div class="col-lg-4">
-                                        <input type="text" class="form-control" placeholder="Product ID">
+                                        <input type="text" class="form-control" placeholder="Product ID" id="product_id" name="product_id">
                                     </div>
                                 </div>
 
@@ -123,7 +123,7 @@
                                         <label for="exampleFormControlSelect1">PRODUCT TYPE :</label>
                                     </div>
                                     <div class="col-lg-4">
-                                        <input type="text" class="form-control" placeholder="Product Type">
+                                        <input type="text" class="form-control" placeholder="Product Type" id="product_type" name="product_type">
                                     </div>
                                 </div>
 
@@ -133,9 +133,11 @@
 
                                     </div>
                                     <div class="col-lg-4">
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <select class="form-control" id="product_size" name="product_size">
+                                            <option selected>Choose</option>
                                             <option>S</option>
                                             <option>M</option>
+                                            <option>X</option>
                                             <option>XL</option>
                                         </select>
                                     </div>
@@ -146,10 +148,10 @@
                                         <label for="exampleFormControlSelect1">STANDARD WEIGHT :</label>
                                     </div>
                                     <div class="col-lg-2">
-                                        <input type="number" class="form-control" placeholder="Min">
+                                        <input type="number" class="form-control" placeholder="Min" id="weight_min" name="weight_min">
                                     </div>
                                     <div class="col-lg-2">
-                                        <input type="number" class="form-control" placeholder="Max">
+                                        <input type="number" class="form-control" placeholder="Max" id="weight_max" name="weight_max">
                                     </div>
                                 </div>
 
@@ -158,15 +160,15 @@
                                         <label for="exampleFormControlSelect1">STANDARD LENGTH :</label>
                                     </div>
                                     <div class="col-lg-2">
-                                        <input type="number" class="form-control" placeholder="Min">
+                                        <input type="number" class="form-control" placeholder="Min" id="length_min" name="length_max">
                                     </div>
                                     <div class="col-lg-2">
-                                        <input type="number" class="form-control" placeholder="Max">
+                                        <input type="number" class="form-control" placeholder="Max" id="length_max" name="length_max">
                                     </div>
                                 </div>
 
                                 <div class="row my-3  d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary" >Save</button>
+                                    <button type="submit" class="btn btn-primary" >Save</button>
                                 </div>
 
                             </div>

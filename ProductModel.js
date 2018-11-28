@@ -3,17 +3,17 @@ var Schema = mongoose.Schema
 
 // ------------------------------ Product Schema -------------------------------------
 var ProductSchema = new Schema({
-    productID:{
+    product_id:{
         type:String,
         required:true,
         unique:true,
         minlength:5
     },
-    producType:{
+    produc_type:{
         type:String,
         required:true
     },
-    productSize:{
+    product_size:{
         type:String,
         required:true
     },
